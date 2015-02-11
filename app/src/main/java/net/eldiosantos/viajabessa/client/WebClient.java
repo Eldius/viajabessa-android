@@ -1,6 +1,6 @@
 package net.eldiosantos.viajabessa.client;
 
-import net.eldiosantos.viajabessa.Constants;
+import net.eldiosantos.viajabessa.util.Constants;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;

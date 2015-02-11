@@ -33,7 +33,7 @@ public class PacoteConverter {
     public List<Pacote> fromJSONArray(final String json) throws JSONException {
         List<Pacote> results = new ArrayList<>();
 
-        JSONArray array = new JSONArray(json);
+        JSONArray array = new JSONObject(json).getJSONArray("list");
         for(int index = 0; index < array.length(); index++) {
             results.add(parseJSONObject(array.getJSONObject(index)));
         }

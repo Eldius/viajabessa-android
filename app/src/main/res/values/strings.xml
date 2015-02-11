@@ -4,5 +4,6 @@
     <string name="app_name">viajabessa</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="main_list_title">Pacotes disponíveis:</string>
 
 </resources>
