@@ -2,17 +2,22 @@ package net.eldiosantos.viajabessa.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
+import net.eldiosantos.viajabessa.DetalheFragment;
 import net.eldiosantos.viajabessa.adapter.PacoteListAdapter;
 import net.eldiosantos.viajabessa.R;
 import net.eldiosantos.viajabessa.model.Pacote;
 import net.eldiosantos.viajabessa.task.GetListaPacotesTask;
+import net.eldiosantos.viajabessa.util.Constants;
 import net.eldiosantos.viajabessa.util.Logger;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -31,6 +36,26 @@ public class ListaPacotesFragment extends Fragment {
         new GetListaPacotesTask(this).execute();
 
         listView = (ListView) layout.findViewById(R.id.lista_pacotes);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+
+                DetalheFragment detalheFragment = new DetalheFragment();
+                Bundle bundle = new Bundle();
+                Serializable pacote = (Serializable) listView.getAdapter().getItem(position);
+                bundle.putSerializable(Constants.PACOTE_PARAMETRO, pacote);
+                detalheFragment.setArguments(bundle);
+                ListaPacotesFragment.this
+                        .getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.main_fragment, detalheFragment)
+                        .addToBackStack(null)
+                        .commit();
+
+            }
+        });
         Logger.log("ListaPacotesFragment.onCreateView.");
         return layout;
     }
