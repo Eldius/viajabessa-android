@@ -2,14 +2,12 @@ package net.eldiosantos.viajabessa.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import net.eldiosantos.viajabessa.DetalheFragment;
 import net.eldiosantos.viajabessa.adapter.PacoteListAdapter;
 import net.eldiosantos.viajabessa.R;
 import net.eldiosantos.viajabessa.model.Pacote;

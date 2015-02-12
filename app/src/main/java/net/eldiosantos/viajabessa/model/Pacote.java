@@ -12,6 +12,8 @@ public class Pacote implements Serializable {
 
     private String descricao;
 
+    private String foto;
+
     private BigDecimal valor;
 
     public Long getId() {
@@ -47,6 +49,15 @@ public class Pacote implements Serializable {
 
     public Pacote setValor(BigDecimal valor) {
         this.valor = valor;
+        return this;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public Pacote setFoto(String foto) {
+        this.foto = foto;
         return this;
     }
 }

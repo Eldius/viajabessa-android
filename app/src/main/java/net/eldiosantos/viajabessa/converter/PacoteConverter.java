@@ -27,7 +27,8 @@ public class PacoteConverter {
         return new Pacote().setDescricao(jsonObject.getString("descricao"))
                 .setId(jsonObject.getLong("id"))
                 .setTitulo(jsonObject.getString("titulo"))
-                .setValor(new BigDecimal(jsonObject.getString("valor")));
+                .setValor(new BigDecimal(jsonObject.getString("valor")))
+                .setFoto(jsonObject.getString("foto"));
     }
 
     public List<Pacote> fromJSONArray(final String json) throws JSONException {
